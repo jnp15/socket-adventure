@@ -13,7 +13,7 @@ except IndexError:
     host = "127.0.0.1"
 
 client_socket = socket.socket()
-client_socket.connect((host, port))
+client_socket.connect(("127.0.0.1", 50000))
 
 while True:
     try:
@@ -26,3 +26,6 @@ while True:
 
     my_message = input("> ").encode('utf-8') + b'\n'
     client_socket.sendall(my_message)
+
+print("Connection closed by host.")
+
